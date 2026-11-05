@@ -1,0 +1,8 @@
+WALL PANEL — estructura
+
+index.html       Página y contenido
+styles.css       Diseño, colores y responsive
+script.js        Navegación y animaciones
+assets/logo.jpeg Logo/referencia visual entregada
+README.md        Instrucciones de uso
+start-server.py  Servidor local opcional

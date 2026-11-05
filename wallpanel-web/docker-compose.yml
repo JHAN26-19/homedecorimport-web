@@ -1,0 +1,16 @@
+services:
+  wallpanel-web:
+    build: .
+    container_name: wallpanel-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-wallpanel
+    restart: unless-stopped
+    network_mode: host
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    depends_on:
+      - wallpanel-web
